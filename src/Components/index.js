@@ -9,3 +9,5 @@ export { DesarrollaPotencialTitle } from './helpers/Titles/DesarrollaPotencialTi
 export { BrazoDerechoTitle } from './helpers/Titles/BrazoDerechoTitle'
 export { TeEncataraTitle } from './helpers/Titles/TeEncataraTitle'
 export { NuestroEquipo } from './helpers/Titles/NuestroEquipo'
+export { Header } from './Header/Header'
+export { Input } from '../Components/Input/Input'

@@ -3,7 +3,7 @@ import { ContainerMore, TextMore, Arrow } from './Styled'
 export const KnowMore = () => {
   return (
     <ContainerMore>
-      <Arrow/>
+      <Arrow />
       <TextMore>Quiero saber mas</TextMore>
     </ContainerMore>
   )

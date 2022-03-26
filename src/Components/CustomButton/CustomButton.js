@@ -2,11 +2,11 @@ import { TouchableOpacity } from 'react-native'
 import React from 'react'
 import { ButtonContainer, ButtonText } from './Styled'
 
-export const CustomButton = (props) => {
+export const CustomButton = ({ onPress, Text }) => {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={onPress}>
       <ButtonContainer>
-        <ButtonText>{props.Text}</ButtonText>
+        <ButtonText>{Text}</ButtonText>
       </ButtonContainer>
     </TouchableOpacity>
   )

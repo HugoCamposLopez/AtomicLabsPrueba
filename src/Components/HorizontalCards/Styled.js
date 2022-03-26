@@ -38,6 +38,7 @@ export const InLineContainer = styled.View`
   width: ${props => props.width || '70%'};
   margin-right: auto;
   margin-left: auto;
+  margin-top: ${props => props.marginTop || '0px'};
 `
 
 export const DotsContainer = styled.View`

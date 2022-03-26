@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Ramón Gómez",
+    "position": "Front-end developer",
+    "photo": "https://i.ibb.co/R6Q6hVw/photo1-frontend.png"
+  },
+  {
+    "id": 2,
+    "name": "Ximena Mejía",
+    "position": "UX Designer",
+    "photo": "https://i.ibb.co/85HRnR5/photo2-ux.png"
+  },
+  {
+    "id": 3,
+    "name": "Jaime Dominguez",
+    "position": "Back-end developer",
+    "photo": "https://i.ibb.co/Bcbn501/photo3-backend.png"
+  }
+]

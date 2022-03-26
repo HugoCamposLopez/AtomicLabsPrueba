@@ -1,12 +1,12 @@
 
 import React from 'react'
-import { SafeAreaView, Text } from 'react-native'
-
+import { AppStack } from './src/Components/Navigator/AppStack'
+import { NavigationContainer } from '@react-navigation/native'
 const App = () => {
   return (
-    <SafeAreaView>
-      <Text>Hola Mundo!</Text>
-    </SafeAreaView>
+    <NavigationContainer>
+      <AppStack/>
+    </NavigationContainer>
   )
 }
 

@@ -10,7 +10,7 @@ const Stack = createNativeStackNavigator()
 export const AppStack = () => {
   return (
     <Stack.Navigator
-      initialRouteName="WantToKnowYou"
+      initialRouteName="MainScreen"
       screenOptions={{ headerShown: false }}>
       <Stack.Screen name="MainScreen" component={MainScreen} />
       <Stack.Screen name="WantToKnowYou" component={WantToKnowYou} />

@@ -1,3 +1,5 @@
+import React from 'react'
+import { TittleText } from '../../../Screens/Styled'
 export function nameValidate(name) {
   let color = ''
   if (name.length == 0) {
@@ -14,4 +16,20 @@ export function buttonValidate(name, lastName) {
     isDisabled = false
   }
   return isDisabled
+}
+
+export function renderWarnings(name, type) {
+  let render = null
+  name.length >= 0 && name.length < 4
+    ? (render = (
+        <TittleText size={'12px'} color={'red'} underline={'underline'}>
+          El {type} debe tener mas de 3 caracteres
+        </TittleText>
+      ))
+    : (render = (
+        <TittleText size={'12px'} color={'green'} underline={'underline'}>
+          {type} válido
+        </TittleText>
+      ))
+  return render
 }

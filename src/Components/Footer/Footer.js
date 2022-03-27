@@ -1,9 +1,9 @@
 import React from 'react'
-import { TouchableOpacity, Linking } from 'react-native'
 import { FooterContainer } from './Styled'
-import { CustomImage, TittleText } from '../../Screens/Styled'
+import { TittleText } from '../../Screens/Styled'
 import { InLineContainer } from '../HorizontalCards/Styled'
-
+import { TwitterLogo } from './TwitterLogo'
+import { LinkedInLogo } from './LinkedInLogo'
 export const Footer = () => {
   return (
     <FooterContainer>
@@ -23,29 +23,8 @@ export const Footer = () => {
         Aviso de privacidad
       </TittleText>
       <InLineContainer width={'20%'} justify={'space-between'}>
-        <TouchableOpacity
-          onPress={() => {
-            Linking.openURL('https://www.linkedin.com/company/atomic-mexico/')
-          }}>
-          <CustomImage
-            height={'30px'}
-            width={'30px'}
-            source={require('../../assets/PaqueteAtomic/linkedin.png')}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => {
-            Linking.openURL(
-              'https://twitter.com/AtomicMexico?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor',
-            )
-          }}>
-          <CustomImage
-            marginTop={'25%'}
-            height={'25px'}
-            width={'30px'}
-            source={require('../../assets/PaqueteAtomic/twitter.png')}
-          />
-        </TouchableOpacity>
+        <LinkedInLogo />
+        <TwitterLogo />
       </InLineContainer>
     </FooterContainer>
   )

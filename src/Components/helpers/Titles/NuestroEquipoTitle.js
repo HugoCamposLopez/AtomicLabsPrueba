@@ -1,7 +1,7 @@
 import React from 'react';
 import {TitleContainer, TittleText} from '../../../Screens/Styled';
 
-export const NuestroEquipo = () => {
+export const NuestroEquipoTitle = () => {
   return (
     <TitleContainer>
       <TittleText size={'35px'}>

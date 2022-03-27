@@ -5,16 +5,17 @@ import {
   Footer,
   Header,
   Logo,
-  IngresaTuNumeroTitle,
   Input,
   CustomButton,
+  CustomSubtitle
 } from '../Components'
 import { useNavigation } from '@react-navigation/native'
 import {
   validateLengthPhone,
   validatePhone,
-  renderWarnings,
+  renderWarnings
 } from '../Components/helpers/Validations/Validations'
+
 export const Phone = () => {
   const navigation = useNavigation()
   const [cellphone, setCellphone] = useState('')
@@ -26,15 +27,17 @@ export const Phone = () => {
         style={{ flex: 1, marginTop: -40 }}>
         <Logo />
         <Header Text1={'VALIDA TU \n'} Text2={'CELULAR'} />
-        <IngresaTuNumeroTitle />
+        <CustomSubtitle
+          text1={'Necesitamos validar tu número para continuar'}
+          text2={'Ingresa tu numero a 10 digitos y te enviaremos un código SMS'}
+        />
         <Input
           InputText={'Número de celular'}
           onChangeText={value => setCellphone(value)}
-          marginTop={'-10%'}
           border={validateLengthPhone(cellphone)}
           keyboardType={'number-pad'}
         />
-        {renderWarnings(cellphone, 'Numero de ceular', 0, 11)}
+        {renderWarnings(cellphone, 'Numero de ceular', 10, /^[0-9]*$/)}
         <CustomButton
           Color={'white'}
           Text={'Continuar'}

@@ -12,12 +12,13 @@ import {
   DesarrollaPotencialTitle,
   BrazoDerechoTitle,
   TeEncataraTitle,
-  NuestroEquipo
+  NuestroEquipoTitle
 } from '../Components/index'
 import { useNavigation } from '@react-navigation/native'
 
 export const MainScreen = () => {
   const navigation = useNavigation()
+
   return (
     <Container>
       <ImageBackground
@@ -44,7 +45,7 @@ export const MainScreen = () => {
           Text={'¡Quiero ser parte!'}
           onPress={() => navigation.navigate('WantToKnowYou')}
         />
-        <NuestroEquipo />
+        <NuestroEquipoTitle />
         <WorkerCards />
       </ImageBackground>
       <Footer />

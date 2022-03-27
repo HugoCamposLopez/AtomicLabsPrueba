@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const HeaderContainer = styled.View`
   width: 90%;
   align-items: center;
-  height: auto;
+  height: 50px;
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 200px;

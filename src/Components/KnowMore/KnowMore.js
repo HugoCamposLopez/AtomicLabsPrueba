@@ -1,10 +1,13 @@
 import React from 'react'
 import { ContainerMore, TextMore, Arrow } from './Styled'
-export const KnowMore = () => {
+import { TouchableOpacity } from 'react-native'
+export const KnowMore = props => {
   return (
-    <ContainerMore>
-      <Arrow />
-      <TextMore>Quiero saber mas</TextMore>
-    </ContainerMore>
+    <TouchableOpacity onPress={props.onPress}>
+      <ContainerMore>
+        <Arrow />
+        <TextMore>Quiero saber mas</TextMore>
+      </ContainerMore>
+    </TouchableOpacity>
   )
 }

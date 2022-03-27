@@ -8,7 +8,7 @@ import {
   Footer,
   Header,
   Input,
-  QueremosSaberTitle,
+  CustomSubtitle,
 } from '../Components/index'
 import { useNavigation } from '@react-navigation/native'
 import {
@@ -29,19 +29,23 @@ export const WantToKnowYou = () => {
         style={{ flex: 1, marginTop: -40 }}>
         <Logo />
         <Header isFirst={true} Text1={'TE QUEREMOS '} Text2={'CONOCER'} />
-        <QueremosSaberTitle />
+        <CustomSubtitle
+          text1={
+            'Queremos saber que eres tú por favor ingresa los siguientes datos:'
+          }
+        />
         <Input
           InputText={'Nombre (s)'}
           onChangeText={value => setName(value)}
           border={nameValidate(name)}
         />
-        {renderWarnings(name, 'Nombre', 0, 4)}
+        {renderWarnings(name, 'Nombre', 4, /^[A-Z]+$/i)}
         <Input
           InputText={'Apellidos'}
           onChangeText={value => setLastName(value)}
           border={nameValidate(lastName)}
         />
-        {renderWarnings(lastName, 'Apellido', 0, 4)}
+        {renderWarnings(lastName, 'Apellido', 4, /^[A-Z]+$/i)}
         <CustomButton
           Color={'white'}
           Text={'Enviar'}

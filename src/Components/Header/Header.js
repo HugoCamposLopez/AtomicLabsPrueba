@@ -43,7 +43,11 @@ export const Header = props => {
             width={'50px'}
             height={'50px'}
             marginTop={'5%'}
-            source={require('../../assets/PaqueteAtomic/Group4015.png')}
+            source={
+              props.isSecond
+                ? require('../../assets/PaqueteAtomic/Group4015.png')
+                : null
+            }
           />
         </ImgContainer>
 

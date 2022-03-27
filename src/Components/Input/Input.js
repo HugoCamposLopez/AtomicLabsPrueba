@@ -3,11 +3,15 @@ import { InputComponentContainer, TextInput } from './Styled'
 import { CustomImage, TittleText } from '../../Screens/Styled'
 export const Input = props => {
   return (
-    <InputComponentContainer>
+    <InputComponentContainer marginTop={props.marginTop}>
       <TittleText align={'left'} size={'18px'} weight={'400'}>
         {props.InputText}
       </TittleText>
-      <TextInput onChangeText={props.onChangeText} border={props.border} />
+      <TextInput
+        keyboardType={props.keyboardType}
+        onChangeText={props.onChangeText}
+        border={props.border}
+      />
       <CustomImage
         width={'15px'}
         height={'20px'}

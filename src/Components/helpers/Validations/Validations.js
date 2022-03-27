@@ -33,3 +33,21 @@ export function renderWarnings(name, type) {
       ))
   return render
 }
+
+export function validatePhone(cellphone) {
+  let isDisabled = null
+  cellphone.length >= 10 ? (isDisabled = false) : (isDisabled = true)
+  return isDisabled
+}
+
+export function validateLengthPhone(cellphone) {
+  let color = ''
+  if (cellphone.length == 0) {
+    color = 'white'
+  } else {
+    cellphone.length >= 1 && cellphone.length < 10
+      ? (color = 'red')
+      : (color = 'green')
+  }
+  return color
+}

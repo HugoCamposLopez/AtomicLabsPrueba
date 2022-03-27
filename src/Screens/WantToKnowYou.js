@@ -35,13 +35,13 @@ export const WantToKnowYou = () => {
           onChangeText={value => setName(value)}
           border={nameValidate(name)}
         />
-        {renderWarnings(name, 'Nombre')}
+        {renderWarnings(name, 'Nombre', 0, 4)}
         <Input
           InputText={'Apellidos'}
           onChangeText={value => setLastName(value)}
           border={nameValidate(lastName)}
         />
-        {renderWarnings(lastName, 'Apellido')}
+        {renderWarnings(lastName, 'Apellido', 0, 4)}
         <CustomButton
           Color={'white'}
           Text={'Enviar'}

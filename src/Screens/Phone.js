@@ -13,6 +13,7 @@ import { useNavigation } from '@react-navigation/native'
 import {
   validateLengthPhone,
   validatePhone,
+  renderWarnings,
 } from '../Components/helpers/Validations/Validations'
 export const Phone = () => {
   const navigation = useNavigation()
@@ -33,6 +34,7 @@ export const Phone = () => {
           border={validateLengthPhone(cellphone)}
           keyboardType={'number-pad'}
         />
+        {renderWarnings(cellphone, 'Numero de ceular', 0, 11)}
         <CustomButton
           Color={'white'}
           Text={'Continuar'}

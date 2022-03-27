@@ -38,4 +38,3 @@ export const CustomImage = styled.Image`
 export const ImgContainer = styled.View`
   padding: 0% 10% 3% 3%;
 `
-export const OrangeButton = styled.View``

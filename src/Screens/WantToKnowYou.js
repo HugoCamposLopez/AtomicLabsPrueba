@@ -28,20 +28,20 @@ export const WantToKnowYou = () => {
         resizeMode="cover"
         style={{ flex: 1, marginTop: -40 }}>
         <Logo />
-        <Header isSecond={true} Text1={'TE QUEREMOS '} Text2={'CONOCER'} />
+        <Header isFirst={true} Text1={'TE QUEREMOS '} Text2={'CONOCER'} />
         <QueremosSaberTitle />
         <Input
           InputText={'Nombre (s)'}
           onChangeText={value => setName(value)}
           border={nameValidate(name)}
         />
-        {renderWarnings(name, 'nombre')}
+        {renderWarnings(name, 'Nombre', 0, 4)}
         <Input
           InputText={'Apellidos'}
           onChangeText={value => setLastName(value)}
           border={nameValidate(lastName)}
         />
-        {renderWarnings(lastName, 'apellido')}
+        {renderWarnings(lastName, 'Apellido', 0, 4)}
         <CustomButton
           Color={'white'}
           Text={'Enviar'}

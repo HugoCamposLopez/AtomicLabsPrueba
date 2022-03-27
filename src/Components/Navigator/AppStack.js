@@ -4,7 +4,7 @@ import {
   MainScreen,
   WantToKnowYou,
   FinalPage,
-  Phone,
+  Phone
 } from '../../Screens/index'
 const Stack = createNativeStackNavigator()
 export const AppStack = () => {

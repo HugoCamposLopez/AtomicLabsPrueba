@@ -2,8 +2,6 @@ import React from 'react'
 import {
   HeaderContainer,
   NumbersContainers,
-  OrangeBar,
-  WhiteBar,
 } from './Styled'
 import { InLineContainer } from '../HorizontalCards/Styled'
 import { CustomImage, TittleText, ImgContainer } from '../../Screens/Styled'
@@ -16,9 +14,9 @@ export const Header = props => {
           height={'30px'}
           marginTop={'5%'}
           source={
-            props.isSecond
-              ? require(`../../assets/PaqueteAtomic/Group4015.png`)
-              : null
+            props.isFirst
+              ? require('../../assets/PaqueteAtomic/Group4015.png')
+              : require('../../assets/PaqueteAtomic/checkmark.png')
           }
         />
         <CustomImage
@@ -26,18 +24,23 @@ export const Header = props => {
           height={'30px'}
           marginTop={'5%'}
           source={
-            props.isSecond
-              ? require(`../../assets/PaqueteAtomic/Group4019.png`)
-              : null
+            props.isFirst
+              ? require('../../assets/PaqueteAtomic/Group4019.png')
+              : require('../../assets/PaqueteAtomic/Group4020.png')
           }
         />
       </NumbersContainers>
-      <WhiteBar />
-      <OrangeBar />
-      <InLineContainer
-        marginTop={'10%'}
-        justify={'space-between'}
-        width={'90%'}>
+      <CustomImage
+        width={'100%'}
+        height={'10px'}
+        radius={'50px'}
+        source={
+          props.isFirst
+            ? require('../../assets/PaqueteAtomic/bar1.png')
+            : require('../../assets/PaqueteAtomic/bar2.png')
+        }
+      />
+      <InLineContainer marginTop={'10%'} width={'90%'}>
         <ImgContainer>
           <CustomImage
             width={'50px'}
@@ -46,7 +49,7 @@ export const Header = props => {
             source={
               props.isSecond
                 ? require('../../assets/PaqueteAtomic/Group4015.png')
-                : null
+                : require('../../assets/PaqueteAtomic/Group4023.png')
             }
           />
         </ImgContainer>

@@ -9,6 +9,12 @@ export const TitleContainer = styled.View`
   padding: 20px 0px 0px 0px;
   margin-top: ${props => props.marginTop || '0px'};
 `
+export const TitleContainerLeft = styled.View`
+width: 90%
+margin-left: auto;
+margin-right: auto
+height: auto
+`
 
 export const TittleText = styled.Text`
 color: ${props => props.color || 'white'};
@@ -27,9 +33,8 @@ export const CustomImage = styled.Image`
   width: ${props => props.width || '350px'};
   margin-left: ${props => props.marginLeft || 'auto'};
   margin-right: auto;
+  border-radius: ${props => props.radius || '0px'};
 `
 export const ImgContainer = styled.View`
-  padding: 0% 3% 3% 3%;
-`
-export const OrangeButton = styled.View`
+  padding: 0% 10% 3% 3%;
 `

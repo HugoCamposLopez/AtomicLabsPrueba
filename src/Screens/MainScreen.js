@@ -12,7 +12,7 @@ import {
   DesarrollaPotencialTitle,
   BrazoDerechoTitle,
   TeEncataraTitle,
-  NuestroEquipo,
+  NuestroEquipo
 } from '../Components/index'
 import { useNavigation } from '@react-navigation/native'
 

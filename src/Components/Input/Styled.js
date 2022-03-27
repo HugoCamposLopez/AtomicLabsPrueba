@@ -4,7 +4,7 @@ export const InputComponentContainer = styled.View`
 width: 90%
 margin-left: auto;
 margin-right: auto;
-margin-top: 5%;
+margin-top: ${props => props.marginTop || '5%'};
 margin-bottom: 5%
 `
 export const TextInput = styled.TextInput`

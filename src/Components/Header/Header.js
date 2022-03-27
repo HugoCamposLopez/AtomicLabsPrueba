@@ -1,10 +1,10 @@
 import React from 'react'
 import {
   HeaderContainer,
-  NumbersContainers,
+  NumbersContainers
 } from './Styled'
 import { InLineContainer } from '../HorizontalCards/Styled'
-import { CustomImage, TittleText, ImgContainer } from '../../Screens/Styled'
+import { CustomImage, TittleText, ImgContainer, TitleContainerLeft } from '../../Screens/Styled'
 export const Header = props => {
   return (
     <HeaderContainer>
@@ -53,13 +53,15 @@ export const Header = props => {
             }
           />
         </ImgContainer>
+            <TitleContainerLeft>
 
         <TittleText align={'left'} weight={'800'} marginTop={'-2%'}>
           {props.Text1}
-          <TittleText color={'#FA4D09'} weight={'800'}>
-            {props.Text2}
           </TittleText>
+          <TittleText color={'#FA4D09'} weight={'800'} align={'left'}>
+            {props.Text2}
         </TittleText>
+            </TitleContainerLeft>
       </InLineContainer>
     </HeaderContainer>
   )

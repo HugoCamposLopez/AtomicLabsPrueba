@@ -1,9 +1,9 @@
 import React from 'react'
 import { TittleText, TitleContainerLeft } from '../../../Screens/Styled'
 
-export function nameValidate(name) {
+export function nameValidate (name) {
   let color = ''
-  let regx = /^[A-Z]+$/i
+  const regx = /^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/
   if (name.length == 0) {
     color = 'white'
   } else {
@@ -12,18 +12,18 @@ export function nameValidate(name) {
   return color
 }
 
-export function buttonValidate(name, lastName) {
+export function buttonValidate (name, lastName) {
   let isDisabled = true
-  let regx = /^[A-Z]+$/i
+  const regx = /^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/
   if (name.length >= 4 && lastName.length >= 4 && regx.test(name)) {
     isDisabled = false
   }
   return isDisabled
 }
 
-export function renderWarnings(name, type, maxValue, reg) {
+export function renderWarnings (name, type, maxValue, reg) {
   let render = null
-  let regx = reg
+  const regx = reg
   if (name.length == 0) {
     render = (
       <TitleContainerLeft>
@@ -53,8 +53,8 @@ export function renderWarnings(name, type, maxValue, reg) {
   return render
 }
 
-export function validatePhone(cellphone) {
-  let regx = /^[0-9]*$/
+export function validatePhone (cellphone) {
+  const regx = /^[0-9]*$/
   let isDisabled = null
   cellphone.length >= 10 && regx.test(cellphone)
     ? (isDisabled = false)
@@ -62,9 +62,9 @@ export function validatePhone(cellphone) {
   return isDisabled
 }
 
-export function validateLengthPhone(cellphone) {
+export function validateLengthPhone (cellphone) {
   let color = ''
-  let regx = /^[0-9]*$/
+  const regx = /^[0-9]*$/
   console.log(regx.test(cellphone))
   if (cellphone.length == 0) {
     color = 'white'

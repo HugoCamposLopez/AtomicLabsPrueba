@@ -1,20 +1,20 @@
 # AtomicLabsPrueba
 
-Android 
-npm install
+# Android 
+npm install -
 npm run android
 
-iOS
-npm install
-cd ios
-pod install
-cd..
+# iOS
+npm install - 
+cd ios -
+pod install -
+cd.. -
 npm run ios
 
-Troubleshooting
-cd android
+# Troubleshooting
+cd android -
 ./gradlew clean
 
-or
+# or
 
-Delete app from simulator.
+Delete app from simulator and re-run script.

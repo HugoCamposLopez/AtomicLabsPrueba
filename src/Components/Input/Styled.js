@@ -10,7 +10,7 @@ margin-bottom: 5%
 export const TextInput = styled.TextInput`
   background-color: white;
   color: black;
-  height: 40px;
+  height: 45px;
   border-radius: 5px;
   margin-top: 3%;
   font-size: 18px;

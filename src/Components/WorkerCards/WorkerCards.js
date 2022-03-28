@@ -7,7 +7,6 @@ export const WorkerCards = () => {
   return (
     <WorkerCardContainer>
       {Workers?.map((element, index) => {
-        console.log(element.photo)
         return (
           <WorkerCard key={index}>
             <WorkerImage source={{ uri: element.photo }} key={index} />

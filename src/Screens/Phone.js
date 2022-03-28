@@ -7,58 +7,60 @@ import {
   Logo,
   Input,
   CustomButton,
-  CustomSubtitle
+  CustomSubtitle,
 } from '../Components'
 import { useNavigation } from '@react-navigation/native'
 import {
   validateLengthPhone,
   validatePhone,
-  renderWarnings
+  renderWarnings,
 } from '../Components/helpers/Validations/Validations'
 import { SafeAreaView } from 'react-native-safe-area-context'
 export const Phone = () => {
   const navigation = useNavigation()
   const [cellphone, setCellphone] = useState('')
+  const regx = /^[0-9]*$/
   return (
     <Container>
       <ImageBackground
         source={require('../assets/PaqueteAtomic/MaskGroup1.png')}
         resizeMode="cover"
         style={{ flex: 1, marginTop: -40 }}>
-          <SafeAreaView>
-
-        <Logo />
-        <Header Text1={'VALIDA TU \n'} Text2={'CELULAR'} />
-        <CustomSubtitle
-          text1={'Necesitamos validar tu número para continuar'}
-          text2={'Ingresa tu numero a 10 digitos y te enviaremos un código SMS'}
+        <SafeAreaView>
+          <Logo />
+          <Header Text1={'VALIDA TU '} Text2={'CELULAR'} />
+          <CustomSubtitle
+            text1={'Necesitamos validar tu número para continuar'}
+            text2={
+              'Ingresa tu numero a 10 digitos y te enviaremos un código SMS'
+            }
           />
-        <Input
-          InputText={'Número de celular'}
-          onChangeText={value => setCellphone(value)}
-          border={validateLengthPhone(cellphone)}
-          keyboardType={'number-pad'}
+          <Input
+            InputText={'Número de celular'}
+            onChangeText={value => setCellphone(value)}
+            border={validateLengthPhone(cellphone)}
+            keyboardType={'number-pad'}
           />
-        {renderWarnings(cellphone, 'Numero de ceular', 10, /^[0-9]*$/)}
-        <CustomButton
-          Color={'white'}
-          Text={'Continuar'}
-          bgColor={'#FA4D09'}
-          radius={'30px'}
-          width={'230px'}
-          height={'50px'}
-          marginTop={'15%'}
-          disabled={validatePhone(cellphone)}
-          opacity={validatePhone(cellphone) ? '0.5' : '1'}
-          onPress={() => navigation.navigate('FinalPage')}
+          {renderWarnings(cellphone, 'Numero de ceular', 10, regx)}
+          <CustomButton
+            Color={'white'}
+            Text={'Continuar'}
+            bgColor={'#FA4D09'}
+            radius={'30px'}
+            width={'230px'}
+            height={'50px'}
+            marginTop={'15%'}
+            disabled={validatePhone(cellphone)}
+            opacity={validatePhone(cellphone) ? '0.5' : '1'}
+            onPress={() => navigation.navigate('FinalPage')}
           />
-        <CustomImage
-          width={'350px'}
-          height={'500px'}
-          marginTop={'-5%'}
-          source={require('../assets/PaqueteAtomic/Group4034.png')}
+          <CustomImage
+            width={'350px'}
+            height={'500px'}
+            marginTop={'-5%'}
+            source={require('../assets/PaqueteAtomic/Group4034.png')}
           />
-          </SafeAreaView>
+        </SafeAreaView>
       </ImageBackground>
       <Footer />
     </Container>

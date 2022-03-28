@@ -32,9 +32,10 @@ export const CustomImage = styled.Image`
   height: ${props => props.height || '300px'};
   width: ${props => props.width || '350px'};
   margin-left: ${props => props.marginLeft || 'auto'};
+  margin-right: ${props => props.marginRight || 'auto'};
   margin-right: auto;
   border-radius: ${props => props.radius || '0px'};
 `
 export const ImgContainer = styled.View`
-  padding: 0% 10% 3% 3%;
+  padding: 0% 30% 3% 3%;
 `

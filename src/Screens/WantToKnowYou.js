@@ -8,15 +8,15 @@ import {
   Footer,
   Header,
   Input,
-  CustomSubtitle,
+  CustomSubtitle
 } from '../Components/index'
 import { useNavigation } from '@react-navigation/native'
 import {
   nameValidate,
   buttonValidate,
-  renderWarnings,
+  renderWarnings
 } from '../Components/helpers/Validations/Validations'
-
+import { SafeAreaView } from 'react-native-safe-area-context'
 export const WantToKnowYou = () => {
   const [name, setName] = useState('')
   const [lastName, setLastName] = useState('')
@@ -27,25 +27,27 @@ export const WantToKnowYou = () => {
         source={require('../assets/PaqueteAtomic/MaskGroup1.png')}
         resizeMode="cover"
         style={{ flex: 1, marginTop: -40 }}>
+          <SafeAreaView>
+
         <Logo />
         <Header isFirst={true} Text1={'TE QUEREMOS '} Text2={'CONOCER'} />
         <CustomSubtitle
           text1={
             'Queremos saber que eres tú por favor ingresa los siguientes datos:'
           }
-        />
+          />
         <Input
           InputText={'Nombre (s)'}
           onChangeText={value => setName(value)}
           border={nameValidate(name)}
-        />
-        {renderWarnings(name, 'Nombre', 4, /^[A-Z]+$/i)}
+          />
+        {renderWarnings(name, 'Nombre', 4, /^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/)}
         <Input
           InputText={'Apellidos'}
           onChangeText={value => setLastName(value)}
           border={nameValidate(lastName)}
-        />
-        {renderWarnings(lastName, 'Apellido', 4, /^[A-Z]+$/i)}
+          />
+        {renderWarnings(lastName, 'Apellido', 4, /^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/)}
         <CustomButton
           Color={'white'}
           Text={'Enviar'}
@@ -57,12 +59,13 @@ export const WantToKnowYou = () => {
           opacity={buttonValidate(name, lastName) ? '0.5' : '1'}
           disabled={buttonValidate(name, lastName)}
           onPress={() => navigation.navigate('Phone')}
-        />
+          />
         <CustomImage
           height={'550px'}
           width={'100%'}
           source={require('../assets/PaqueteAtomic/Group4033.png')}
-        />
+          />
+          </SafeAreaView>
       </ImageBackground>
       <Footer />
     </Container>

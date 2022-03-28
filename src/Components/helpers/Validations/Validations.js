@@ -1,7 +1,7 @@
 import React from 'react'
 import { TittleText, TitleContainerLeft } from '../../../Screens/Styled'
 
-export function nameValidate (name) {
+export function nameValidate(name) {
   let color = ''
   const regx = /^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/
   if (name.length == 0) {
@@ -12,7 +12,7 @@ export function nameValidate (name) {
   return color
 }
 
-export function buttonValidate (name, lastName) {
+export function buttonValidate(name, lastName) {
   let isDisabled = true
   const regx = /^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/
   if (name.length >= 4 && lastName.length >= 4 && regx.test(name)) {
@@ -21,18 +21,18 @@ export function buttonValidate (name, lastName) {
   return isDisabled
 }
 
-export function renderWarnings (name, type, maxValue, reg) {
-  let render = null
+export function renderWarnings(name, type, maxValue, reg) {
+  let render = (
+    <TitleContainerLeft>
+      <TittleText size={'12px'} color={'red'} underline={'underline'}>
+        El {type} debe tener mas de {maxValue - 1} caracteres y solamente letras
+        o numeros según sea el caso.
+      </TittleText>
+    </TitleContainerLeft>
+  )
   const regx = reg
   if (name.length == 0) {
-    render = (
-      <TitleContainerLeft>
-        <TittleText size={'12px'} color={'red'} underline={'underline'}>
-          El {type} debe tener mas de {maxValue - 1} caracteres y solamente
-          letras o numeros según sea el caso.
-        </TittleText>
-      </TitleContainerLeft>
-    )
+    return render
   } else if (name.length >= maxValue && regx.test(name)) {
     render = (
       <TittleText size={'12px'} color={'green'} underline={'underline'}>
@@ -40,20 +40,13 @@ export function renderWarnings (name, type, maxValue, reg) {
       </TittleText>
     )
   } else {
-    render = (
-      <TitleContainerLeft>
-        <TittleText size={'12px'} color={'red'} underline={'underline'}>
-          El {type} debe tener mas de {maxValue - 1} caracteres y solamente
-          letras o numeros según sea el caso.
-        </TittleText>
-      </TitleContainerLeft>
-    )
+    return render
   }
 
   return render
 }
 
-export function validatePhone (cellphone) {
+export function validatePhone(cellphone) {
   const regx = /^[0-9]*$/
   let isDisabled = null
   cellphone.length >= 10 && regx.test(cellphone)
@@ -62,10 +55,9 @@ export function validatePhone (cellphone) {
   return isDisabled
 }
 
-export function validateLengthPhone (cellphone) {
+export function validateLengthPhone(cellphone) {
   let color = ''
   const regx = /^[0-9]*$/
-  console.log(regx.test(cellphone))
   if (cellphone.length == 0) {
     color = 'white'
   } else {
